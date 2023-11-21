@@ -19,6 +19,14 @@ pipeline {
                     }
                 }
             }
-        }    
+        }
+        stage ("Deploy Kubernetes"){
+            steps{
+                withKubeConfig([credentialsId: 'kubeconfig']){
+                    sh "kubectl apply -f ./k8s/deployment.yaml"
+                    // sh "kubectl set image deployment/web web=matheusmprado/sampletodoaula3:latest"
+                }
+            }
+        }        
 }        
 }
