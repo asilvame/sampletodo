@@ -13,7 +13,7 @@ spec:
     spec:
       containers:
         - name: web
-          image: registry.hub.docker.com/mesquita/sampletodoaula3:latest
+          image: matheusmprado/sampletodo:v1
           ports:
             - containerPort: 3000
           env:
